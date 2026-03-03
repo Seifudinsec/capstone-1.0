@@ -74,8 +74,29 @@ section{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
+    overflow: hidden;
 }
+
+.hero-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-image{
+    width: 40%;
+    position: relative;
+}
+
+.hero-image img{
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    z-index: 2;
+}
+
 
 .main .content{
     max-width: 800px;
@@ -83,12 +104,12 @@ section{
 
 .main .content h2{
     color: white;
-    font-size: 5em;
+    font-size: 4em;
     font-weight: 500;
 }
 
 .main .content h2 span{
-    font-size: 6rem;
+    font-size: 5rem;
     font-weight: 600;
 }
 
@@ -172,13 +193,16 @@ section{
 /* About */
 
 .about{
+    position: relative;
+    background: white;
     min-height: 100vh;
     width: 100%;
+    z-index: 5;
 }
 
 .title{
     width: 100%;
-    font-size: 5em;
+    font-size: 1.5em;
     font-weight: 700;
     text-align: center;
     display: flex;
@@ -190,33 +214,31 @@ section{
 .section-title{
     position: relative;
     color: #3a6cf4;
-    font-size: 2.7em;
+    font-size: 1em;
     font-weight: 800;
     margin-bottom: 60px;
 }
 
-.section-title::before{
-    content: "";
-    position: absolute;
-    top: 56px;
-    left: 50%;
-    width: 140px;
-    height: 4px;
-    background-color: #3a6cf4;
-    transform: translateX(-50%);
+
+.section-title{
+    position: relative;
+    color: #3a6cf4;
+    font-size: 2.7em;
+    font-weight: 800;
+    margin-bottom: 60px;
+    display: inline-block;
 }
 
 .section-title::after{
     content: "";
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: #3a6cf4;
-    transform: translateX(-50%);
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #3a6cf4;
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
+
 
 .about .content{
     position: relative;
@@ -244,7 +266,7 @@ section{
 .about .content .col-left .img-card{
     position: relative;
     width: 100%;
-    min-height: 450px;
+    min-height: 700px;
 }
 
 .about .content .col-left .img-card img{
@@ -264,12 +286,10 @@ section{
 }
 
 .about .content .col-right .paragraph-text {
-    font-size: 3em;
+    font-size: 1.3em;
+    line-height: 1.7;
 }
 
-.about .content .col-right .paragraph-text{
-    font-size: 1em;
-}
 
 /* Skills Section */
 
@@ -676,8 +696,18 @@ section{
     padding: 80px 30px;
   }
 
+  .hero-container{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image{
+    width: 80%;
+    margin-top: 40px;
+  }
+
   .main{
-    background-attachment: scroll; /* Fix mobile lag */
+    background-attachment: scroll; 
   }
 
   .main .content h2{
